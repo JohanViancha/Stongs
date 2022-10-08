@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "red-code-101": {
+      "hosting": {
+        "stongs": [
+          "red-code-101"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "red-code-101"
+  }
+}
