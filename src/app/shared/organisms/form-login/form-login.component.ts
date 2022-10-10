@@ -41,7 +41,9 @@ export class FormLoginComponent implements OnInit {
 
   loginUser(){
     const { email, password } = (this.loginForm.value);
-    this.auth.loginWithEmailPassword(email, password)
+    this.loginForm.markAllAsTouched();
+    if(this.loginForm.status !== 'INVALID'){
+      this.auth.loginWithEmailPassword(email, password)
     .then((user: UserCredential)=>{
       if(user){
         this.alert.openAlert({
@@ -59,6 +61,8 @@ export class FormLoginComponent implements OnInit {
         icon: AlertIcon.error
       })
     });
+    }
+    
 
   }
 

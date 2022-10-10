@@ -23,7 +23,7 @@ export class ButtonSignGoogleComponent implements OnInit {
       if(userCreditial.user){
         this.alert.openAlert({
           title:'Inicio de sesión', 
-          text:`El usuario ${userCreditial.user.displayName} inició sesión en codigo001`,
+          text:`El usuario ${userCreditial.user.displayName} inició sesión en codigo101`,
           icon: AlertIcon.info,
         })
       }
