@@ -26,5 +26,5 @@
             {{error}}
         </p>
     </div>
-    <button type="submit" class="form-login__button" [disabled]="!loginForm.valid" [ngClass]="{invalid: !loginForm.valid && loginForm.touched}">Login</button>
+    <button type="submit" class="form-login__button" [disabled]="!loginForm.valid && loginForm.touched" [ngClass]="{invalid: !loginForm.valid && loginForm.touched}">Login</button>
 </form>

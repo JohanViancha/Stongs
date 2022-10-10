@@ -14,7 +14,6 @@ export class ErrorFormReactivePipe implements PipeTransform {
   }
 
   setErrorInput(errorForm:any,field:unknown,): string{
-  console.log(errorForm)
   const errrosType: any ={
     'required':`El campo ${field} es requerido`,
     'email':`El campo ${field} no tiene formato `,
