@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserCredential } from '@angular/fire/auth';
-import { UserService } from 'src/app/core/security/user.service';
+import { AuthService } from 'src/app/core/security/auth/auth.service';
 import { AlertIcon } from '../../util/services/alert.models';
 import { AlertService } from '../../util/services/alert.service';
 
@@ -12,7 +12,7 @@ import { AlertService } from '../../util/services/alert.service';
 export class ButtonSignGoogleComponent implements OnInit {
 
   textBuutton = 'Iniciar con Google'
-  constructor(private authService: UserService, private alert: AlertService) { }
+  constructor(private authService: AuthService, private alert: AlertService) { }
 
   ngOnInit(): void {
   }
