@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { UserCredential } from '@angular/fire/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/core/security/auth/auth.service';
+import { AlertIcon } from '../../util/services/alert.models';
+import { AlertService } from '../../util/services/alert.service';
 
 @Component({
   selector: 'app-form-login',
@@ -9,7 +13,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class FormLoginComponent implements OnInit {
 
   loginForm: FormGroup;
-  constructor(private fb:  FormBuilder) {
+  constructor(private fb:  FormBuilder,
+              private auth: AuthService,
+              private alert: AlertService) {
+
     this.loginForm = fb.group({
       email: fb.control(''),
       password: fb.control('')
@@ -27,14 +34,31 @@ export class FormLoginComponent implements OnInit {
         Validators.required,
         Validators.minLength(8),
         Validators.maxLength(15),
-        Validators.pattern('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/')
+        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/)
       ]]
     });
   }
 
   loginUser(){
-
-    console.log(this.loginForm)
+    const { email, password } = (this.loginForm.value);
+    this.auth.loginWithEmailPassword(email, password)
+    .then((user: UserCredential)=>{
+      if(user){
+        this.alert.openAlert({
+          title:'Autenticación del usuario', 
+          text:`El usuario ${user.user.email} se ha autenticado`,
+          icon: AlertIcon.success
+        })
+      }
+      
+    })
+    .catch((error)=>{
+      this.alert.openAlert({
+        title:'Autenticación del usuario', 
+        text:'El email y/o contraseña son incorrectos',
+        icon: AlertIcon.error
+      })
+    });
 
   }
 
