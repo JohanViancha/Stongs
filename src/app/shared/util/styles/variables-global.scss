@@ -5,8 +5,17 @@ $color-white: #FFF;
 $color-black: #000;
 $color-gray: rgb(134, 134, 134);
 $color-gray-second: rgba(128, 128, 128, 0.17);
+$color-primary: #168ed3;
+$color-primary-alternate: #1777af99;
+$color-warning: #d2190899;
 
 
 //--------- Fonts --------------//
 $font-title: 'Montserrat', sans-serif;
 $font-paragraph: 'Roboto', sans-serif;
+
+
+$font-size-large: 1.7rem;
+$font-size-medium: 1.2rem;
+$font-size-small: 1rem;
+$font-size-very-small: 0.8rem;

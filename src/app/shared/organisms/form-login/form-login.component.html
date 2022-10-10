@@ -1,0 +1,30 @@
+<form [formGroup]="loginForm" class="form-login" (submit)="loginUser()">
+    <label class="form-login__label">Email</label>
+    <div class="form-login-input" >
+        <span class="material-symbols-outlined form-login-input__icon" >
+            alternate_email
+        </span>
+        <input type="email" class="form-login-input__input" formControlName="email">
+        
+    </div>
+    <div class="form-login-errors" *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched">
+        <p class="form-login-errors__text" *ngFor="let error of loginForm.get('email')?.errors | errorFormReactive: 'email'">
+            {{error}}
+        </p>
+    </div>
+
+    <label class="form-login__label">Contraseña</label>
+    <div class="form-login-input">
+        <span class="material-symbols-outlined form-login-input__icon">
+            password
+            </span>
+        <input type="password" class="form-login-input__input" formControlName="password">
+    </div> 
+   
+    <div class="form-login-errors" *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched">
+        <p class="form-login-errors__text" *ngFor="let error of loginForm.get('password')?.errors | errorFormReactive: 'contraseña'">
+            {{error}}
+        </p>
+    </div>
+    <button type="submit" class="form-login__button" [disabled]="!loginForm.valid" [ngClass]="{invalid: !loginForm.valid && loginForm.touched}">Login</button>
+</form>
