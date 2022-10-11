@@ -23,11 +23,6 @@ export class ButtonSignGoogleComponent implements OnInit {
     .then((userCreditial: UserCredential)=>{
       if(userCreditial.user){
         this.userAuthentication.emit(userCreditial);
-        this.alert.openAlert({
-          title:'Inicio de sesión', 
-          text:`El usuario ${userCreditial.user.displayName} inició sesión en codigo101`,
-          icon: AlertIcon.info,
-        })
       }
     })
     .catch((error)=>{
