@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { UserCredential } from '@angular/fire/auth';
 import { AuthService } from 'src/app/core/security/auth/auth.service';
 import { AlertIcon } from '../../util/services/alert.models';
@@ -10,7 +10,8 @@ import { AlertService } from '../../util/services/alert.service';
   styleUrls: ['./button-sign-google.component.scss']
 })
 export class ButtonSignGoogleComponent implements OnInit {
-
+  
+  @Output() userAuthentication: EventEmitter<UserCredential> = new EventEmitter<UserCredential>()
   textBuutton = 'Iniciar con Google'
   constructor(private authService: AuthService, private alert: AlertService) { }
 
@@ -21,6 +22,7 @@ export class ButtonSignGoogleComponent implements OnInit {
     this.authService.loginWithGoogle()
     .then((userCreditial: UserCredential)=>{
       if(userCreditial.user){
+        this.userAuthentication.emit(userCreditial);
         this.alert.openAlert({
           title:'Inicio de sesión', 
           text:`El usuario ${userCreditial.user.displayName} inició sesión en codigo101`,

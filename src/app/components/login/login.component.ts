@@ -14,8 +14,10 @@ export class LoginComponent implements OnInit {
   }
   
   ngOnInit(): void {
-  
-   
+  }
+
+  redirectHome(){
+    console.log('home');
   }
 
 
