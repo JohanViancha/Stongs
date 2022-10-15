@@ -1,0 +1,50 @@
+@import '../../util/styles/variables-global.scss';
+
+.nav{
+    background-color: $color-gray-second;
+    height: 100vh;
+    min-width: $width-nav;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    -webkit-box-shadow: -7px 10px 42px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: -7px 10px 42px -6px rgba(0,0,0,0.75);
+    box-shadow: -7px 10px 42px -6px rgba(0,0,0,0.75);
+
+    & .nav-list{
+        box-sizing: border-box;
+        position: absolute;
+        top: 6rem;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding:0 2rem;
+        width: 100%;
+        gap: 3rem;
+        
+
+        &-item{
+           
+            display: flex;
+            padding: 0px;
+            flex-direction: row;
+            gap: 1rem;
+            font-family: $font-title;
+            color: $color-primary-alternate;
+            font-size: $font-size-small;
+            align-items: center;
+
+            &__text, &__icon{
+                color: $color-primary-alternate;
+                font-weight: 700;
+                cursor: pointer;
+            }
+
+            &__text:hover, &__icon:hover{
+              color: $color-gray;
+            }
+
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { UserCredential } from '@angular/fire/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/core/security/auth/auth.service';
@@ -12,6 +12,7 @@ import { AlertService } from '../../util/services/alert.service';
 })
 export class FormLoginComponent implements OnInit {
 
+  @Output() userAuthentication: EventEmitter<UserCredential> = new EventEmitter<UserCredential>()
   loginForm: FormGroup;
   constructor(private fb:  FormBuilder,
               private auth: AuthService,
@@ -46,6 +47,7 @@ export class FormLoginComponent implements OnInit {
       this.auth.loginWithEmailPassword(email, password)
     .then((user: UserCredential)=>{
       if(user){
+        this.userAuthentication.emit(user)
         this.alert.openAlert({
           title:'Autenticación del usuario', 
           text:`El usuario ${user.user.email} se ha autenticado`,

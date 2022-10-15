@@ -8,7 +8,11 @@ const routes: Routes = [
     path:'',  redirectTo:'/login', pathMatch:'full'},
   {
     path:'login', 
-    loadChildren: ()=> import('./components/login/login.module').then(mod=>mod.LoginModule)
+    loadChildren: ()=> import('./components/login/login.module').then(mod=>mod.LoginModule),
+  },
+  {
+    path:'home', 
+    loadChildren: ()=> import('./components/home/home.module').then(mod=>mod.HomeModule),
   },
  
 ];

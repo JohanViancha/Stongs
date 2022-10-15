@@ -5,9 +5,9 @@
     <div class="container-login">
         <img class="container-login__image" src="../../../assets/img/image-1271454_1280.png" alt="Imagen de login">
         <span class="container-login__title">Login</span>
-        <app-form-login></app-form-login>
+        <app-form-login (userAuthentication)="redirectHome($event)"></app-form-login>
         <div class="container-login-alternate">
-            <app-button-sign-google></app-button-sign-google>
+            <app-button-sign-google (userAuthentication)="redirectHome($event)"></app-button-sign-google>
         </div>
     
     </div>
