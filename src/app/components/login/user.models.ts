@@ -1,4 +1,4 @@
-export interface UserCredentialImpl {
+export interface UserCredential{
     user:           User;
     providerId:     string;
     _tokenResponse: TokenResponse;
@@ -24,7 +24,7 @@ export interface TokenResponse {
     expiresIn:        string;
     oauthIdToken:     string;
     rawUserInfo:      string;
-    isNewUser:        boolean;
+    isNewUser?:        boolean;
     kind:             string;
 }
 
