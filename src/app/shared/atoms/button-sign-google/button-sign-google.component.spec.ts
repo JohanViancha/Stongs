@@ -3,13 +3,15 @@ import { ButtonSignGoogleComponent } from './button-sign-google.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { AuthService } from 'src/app/core/security/auth/auth.service';
 import { AlertService } from '../../util/services/alert.service';
-import { Auth } from '@angular/fire/auth';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { AuthServiceMock, _alertService } from './button-sign-google.mock';
 
 fdescribe('ButtonSignGoogleComponent', () => {
   let component: ButtonSignGoogleComponent;
   let fixture: ComponentFixture<ButtonSignGoogleComponent>;
+  let serviceAlert : AlertService;
+  let serviceAuth: AuthService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -18,8 +20,14 @@ fdescribe('ButtonSignGoogleComponent', () => {
       ],
       declarations: [ ButtonSignGoogleComponent ],
       providers: [
-        AuthService,
-        AlertService
+        {
+          provide: AuthService,
+          useClass: AuthServiceMock
+        },
+        {
+          provide: AlertService,
+          useValue: _alertService.openAlert
+        }
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
     })
@@ -28,9 +36,21 @@ fdescribe('ButtonSignGoogleComponent', () => {
     fixture = TestBed.createComponent(ButtonSignGoogleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    serviceAlert = fixture.debugElement.injector.get(AlertService);
+    serviceAuth = fixture.debugElement.injector.get(AuthService);
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('the textButton variable should contain the correct text', ()=>{
+    expect(component.textBuutton).toContain('Iniciar con Google')
+  })
+
+  it('signWithGoogle get UserCreditial the Promise', ()=>{
+    component.signWithGoogle();
+    expect(component.textBuutton).toEqual('Iniciar con Google')
+    
+  })
 });
