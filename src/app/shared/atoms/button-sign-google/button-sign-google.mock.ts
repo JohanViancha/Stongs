@@ -1,5 +1,5 @@
 
-import { UserCredential } from "src/app/components/login/user.models";
+import { UserCredential } from "../../../core/models/user.interface";
 import Swal from "sweetalert2";
 import { AlertIcon } from "../../util/services/alert.models";
 
