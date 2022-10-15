@@ -1,0 +1,6 @@
+@import '../../util/styles/variables-global.scss';
+
+.pages-the-most{
+    padding-left: calc($width-nav + 4rem);
+    padding-top:  $height-nav;
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/core/services/product.service';
 
 @Component({
   selector: 'app-page-the-most',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageTheMostComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+    this.productService.getProducts().subscribe((products)=>{
+      console.log(products)
+    })
+
   }
 
 }
