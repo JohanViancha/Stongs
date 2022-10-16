@@ -8,8 +8,8 @@
     background-color: $color-primary;
     top: 0;
     left: 0;
+    position: fixed;
     width: 100%;
-    position:absolute;
     height: $height-nav;
     display: flex;
     flex-direction: row;
