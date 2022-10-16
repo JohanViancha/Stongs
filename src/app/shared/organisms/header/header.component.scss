@@ -8,9 +8,9 @@
     background-color: $color-primary;
     top: 0;
     left: 0;
+    position: fixed;
     width: 100%;
-    position:absolute;
-    height: 4rem;
+    height: $height-nav;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

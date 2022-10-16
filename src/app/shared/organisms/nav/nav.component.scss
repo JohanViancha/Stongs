@@ -7,7 +7,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
+    position: fixed;
+    z-index: 1;
     -webkit-box-shadow: -7px 10px 42px -6px rgba(0,0,0,0.75);
     -moz-box-shadow: -7px 10px 42px -6px rgba(0,0,0,0.75);
     box-shadow: -7px 10px 42px -6px rgba(0,0,0,0.75);
@@ -19,10 +20,9 @@
         display: flex;
         flex-direction: column;
         list-style: none;
-        padding:0 2rem;
         width: 100%;
         gap: 3rem;
-        
+        padding: 0px;
 
         &-item{
            
@@ -34,6 +34,7 @@
             color: $color-primary-alternate;
             font-size: $font-size-small;
             align-items: center;
+            padding:1rem 2rem;
 
             &__text, &__icon{
                 color: $color-primary-alternate;
@@ -48,3 +49,9 @@
         }
     }
 }
+
+.active-link{
+    background-color: $color-gray-second;
+
+}
+
