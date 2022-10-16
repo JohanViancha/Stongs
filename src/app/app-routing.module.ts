@@ -11,8 +11,8 @@ const routes: Routes = [
     loadChildren: ()=> import('./components/login/login.module').then(mod=>mod.LoginModule),
   },
   {
-    path:'home', 
-    loadChildren: ()=> import('./components/home/home.module').then(mod=>mod.HomeModule),
+    path:'appStore', 
+    loadChildren: ()=> import('./components/app-store/app-store.module').then(mod=>mod.AppStoreModule),
   },
  
 ];

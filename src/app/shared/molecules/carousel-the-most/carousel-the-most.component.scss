@@ -1,0 +1,15 @@
+
+.carousel-the-most{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    
+    & .carousel-carts{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        gap: 1rem;
+        width: 100%;
+    }
+}

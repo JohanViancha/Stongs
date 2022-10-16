@@ -8,18 +8,16 @@ import { HeaderComponent } from 'src/app/shared/organisms/header/header.componen
 import { FooterComponent } from 'src/app/shared/molecules/footer/footer.component';
 import { SectionHomeTheMostComponent } from 'src/app/shared/organisms/section-home-the-most/section-home-the-most.component';
 import { CarouselTheMostComponent } from 'src/app/shared/molecules/carousel-the-most/carousel-the-most.component';
-import { CartTheMostComponent } from 'src/app/shared/atoms/cart-the-most/cart-the-most.component';
+import { CardTheMostComponent } from 'src/app/shared/atoms/cart-the-most/card-the-most.component';
 import { PageTheMostComponent } from 'src/app/shared/pages/page-the-most/page-the-most.component';
 
 
 @NgModule({
-  declarations: [HomeComponent,
-    NavComponent,
-    HeaderComponent,
-    FooterComponent,
+  declarations: [
+    HomeComponent,
     SectionHomeTheMostComponent,
     CarouselTheMostComponent,
-    CartTheMostComponent,
+    CardTheMostComponent,
     PageTheMostComponent
   ],
   imports: [

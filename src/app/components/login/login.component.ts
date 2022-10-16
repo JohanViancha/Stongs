@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   }
 
   redirectHome(user:UserCredential){
-    this.router.navigate(['home']);
+    this.router.navigate(['appStore']);
   }
 
 
