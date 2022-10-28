@@ -4,14 +4,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 5rem;
     gap:2rem;
 }
 
 .container-login{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 2rem;
+    height: 100vh;
 
     &__title{
         font-size: $font-size-large;
@@ -21,7 +22,7 @@
     &__image{
         width: 200px;
         height: 200px;
-        margin: auto;
+        margin: 0 auto;
     }
 }
 
