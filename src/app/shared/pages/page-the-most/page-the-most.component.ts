@@ -14,6 +14,7 @@ export class PageTheMostComponent implements OnInit {
     private store: Store<any>) { }
 
   ngOnInit(): void {
+    
     this.store.dispatch(loadProducts());
     this.productService.getProducts().subscribe((products)=>{
       console.log(products)

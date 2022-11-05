@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
   }
 
   redirectHome(user:UserCredential){
-    this.store.dispatch(loadProducts());
     this.router.navigate(['appStore']);
   }
 
