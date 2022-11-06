@@ -8,6 +8,11 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { itemsListProducts } from './state/reducers/products.reducers';
+import { ROOT_REDUCERS } from './state/app.state';
+import { EffectsModule } from '@ngrx/effects';
+import { ProductEffects } from './state/effects/products.effects';
 
 
 @NgModule({
@@ -20,7 +25,9 @@ import { StoreModule } from '@ngrx/store';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot(ROOT_REDUCERS),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot([ProductEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,6 +11,7 @@ export class AuthService {
   constructor(private auth: Auth) {}
 
   loginWithGoogle(): Promise<UserCredential >{
+
     return signInWithPopup(this.auth, new GoogleAuthProvider())
   }
 

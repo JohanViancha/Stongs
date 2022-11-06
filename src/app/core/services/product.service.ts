@@ -15,4 +15,13 @@ export class ProductService {
   getProducts():Observable<Product[]>{
     return collectionData(this.productRef, {idField:'id'}) as Observable<Product[]>;
   }
+
+  getProductsMostSelled():Observable<Product[]>{
+    return collectionData(this.productRef, {idField:'id'}) as Observable<Product[]>;
+  }
+
+  getProductsMostViewed():Observable<Product[]>{
+    return collectionData(this.productRef, {idField:'id'}) as Observable<Product[]>;
+  }
 }
+

@@ -48,11 +48,6 @@ export class FormLoginComponent implements OnInit {
     .then((user: UserCredential)=>{
       if(user){
         this.userAuthentication.emit(user)
-        this.alert.openAlert({
-          title:'Autenticación del usuario', 
-          text:`El usuario ${user.user.email} se ha autenticado`,
-          icon: AlertIcon.success
-        })
       }
       
     })

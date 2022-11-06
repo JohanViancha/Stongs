@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserCredential } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { loadProducts } from 'src/app/state/actions/products.actions';
 
 
 @Component({
