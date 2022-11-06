@@ -13,7 +13,7 @@ import { loadProducts } from 'src/app/state/actions/products.actions';
 export class LoginComponent implements OnInit {
 
   
-  constructor(private router: Router, private store: Store<any>) { 
+  constructor(private router: Router) { 
     
   }
   

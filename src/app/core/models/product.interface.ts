@@ -1,8 +1,8 @@
 export interface Product{
     description: string,
-    envGratis:boolean, 
+    sendFree:boolean, 
     img: string,
-    nombre:string, 
-    precio:number,
+    name:string, 
+    price:number,
     stock:number
 }

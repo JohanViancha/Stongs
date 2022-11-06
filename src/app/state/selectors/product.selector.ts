@@ -6,12 +6,23 @@ import { AppState } from '../app.state'
 export const selectProductsFeature = (state: AppState) => state.listProduct;
 
 
-export const selectListProducts = createSelector(
+export const selectProductsMostSelled= createSelector(
     selectProductsFeature, 
     (state: ProductsState) => state.products
 );
 
 export const selectLoading = createSelector(
     selectProductsFeature, 
-    (state: ProductsState) => state.loading
+    (state: ProductsState) => state.products
+);
+
+export const selectloadedProductsMostViewed = createSelector(
+    selectProductsFeature, 
+    (state: ProductsState) => state.products
+);
+
+
+export const selectloadedProductsRebate = createSelector(
+    selectProductsFeature, 
+    (state: ProductsState) => state.products
 );

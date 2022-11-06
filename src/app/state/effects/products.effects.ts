@@ -12,16 +12,21 @@ export class ProductEffects {
             ofType('[Product List] Load Products'),
             mergeMap(() => this.productService.getProducts()
               .pipe(
-                map(products => ({ type: '[Product List] Loaded success', products })),
+                map(products => ({ type: '[Product List] Loaded rebate products success', products })),
+                catchError(() => EMPTY)
+              )
+              .pipe(
+                map(products => ({ type: '[Product List] Loaded most viewed products success', products })),
+                catchError(() => EMPTY)
+              )
+              .pipe(
+                map(products => ({ type: '[Product List] Loaded most selled products success', products })),
                 catchError(() => EMPTY)
               ))
+              
             )
     })
         
-       
-
-
-
     constructor(
         private actions$: Actions, 
         private productService: ProductService
