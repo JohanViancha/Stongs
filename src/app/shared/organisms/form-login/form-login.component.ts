@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { UserCredential } from '@angular/fire/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { collection } from '@firebase/firestore';
+import { UserSesion } from 'src/app/core/models/user.models';
 import { AuthService } from 'src/app/core/security/auth/auth.service';
 import { AlertIcon } from '../../util/services/alert.models';
 import { AlertService } from '../../util/services/alert.service';
@@ -49,7 +50,9 @@ export class FormLoginComponent implements OnInit {
     .then((user: UserCredential)=>{
       if(user){
         this.auth.getUser(user.user.uid).then((response)=>{
-          this.userAuthentication.emit(user)
+          const session: UserSesion = JSON.parse(JSON.stringify(response.docs[0].data()))
+          this.auth.registerSesion(session)
+          this.userAuthentication.emit(user);
         })
       }
       

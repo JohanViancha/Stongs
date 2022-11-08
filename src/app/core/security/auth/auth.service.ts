@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Auth, signInWithEmailAndPassword, UserCredential } from '@angular/fire/auth';
 import { GoogleAuthProvider, signInWithPopup } from '@firebase/auth';
-import { addDoc, collection,DocumentData,Firestore, getDocs, query, QuerySnapshot, where, } from '@angular/fire/firestore';
+import { addDoc, collection,docData,DocumentData,Firestore, getDocs, query, QuerySnapshot, where, } from '@angular/fire/firestore';
+import { UserSesion } from '../../models/user.models';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -27,8 +29,12 @@ export class AuthService {
 
   getUser(uid:string):Promise<QuerySnapshot<DocumentData>>{
     const userRef = collection(this.fireStore, 'users');
-    const queryUser = query(userRef, where("uid", "==", uid))
+    const queryUser = query(userRef, where("uid", "==", uid));
     return  getDocs(queryUser);
+  }
+
+  registerSesion(session: UserSesion){
+    sessionStorage.setItem('session', JSON.stringify(session))
   }
 }
 
