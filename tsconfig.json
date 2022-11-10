@@ -2,7 +2,7 @@
 {
   "baseUrl":"src",
   "paths": {
-    "@assets/*": ["assets/*"]      
+    "@assets/*": ["assets/*"]
   },
   "compileOnSave": false,
   "compilerOptions": {

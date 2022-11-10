@@ -14,6 +14,7 @@ const routes: Routes = [
     path:'appStore', 
     loadChildren: ()=> import('./components/app-store/app-store.module').then(mod=>mod.AppStoreModule),
   },
+  
  
 ];
 
