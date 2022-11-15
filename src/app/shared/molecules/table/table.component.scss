@@ -1,0 +1,23 @@
+@import '../../util/styles/variables-global.scss';
+
+.table{
+    width: 100%;
+    border-collapse:collapse;
+
+    thead{
+        background-color: $color-primary;
+        color: $color-white;
+        font-family: $font-title;
+        font-weight: 600;
+        th{
+            padding: 0.5rem;
+        }
+ 
+    }
+    td{
+        padding: 1rem;
+        border: 1px solid $color-gray-second;
+        font-family: $font-paragraph;
+        
+    }
+}

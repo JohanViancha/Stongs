@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-table',
@@ -7,6 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableComponent implements OnInit {
 
+  //@Input() thheaders:string[];
+  thheaders:string[] =[
+    'Producto',
+    'Foto',
+    'Stock',
+    'Descripción',
+    'Precio',
+    'Dto.',
+    'Env.'
+  ]
+
+  tbody:any[] =['']
   constructor() { }
 
   ngOnInit(): void {
