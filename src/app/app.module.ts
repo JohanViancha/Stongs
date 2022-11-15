@@ -12,11 +12,12 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ROOT_REDUCERS } from './state/app.state';
 import { EffectsModule } from '@ngrx/effects';
 import { ProductEffects } from './state/effects/products.effects';
+import { SignInComponent } from './components/sign-in/sign-in.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
