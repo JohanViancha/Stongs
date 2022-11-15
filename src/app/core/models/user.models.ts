@@ -5,6 +5,11 @@ export interface UserCredential{
     operationType:  string;
 }
 
+export interface UserSesion{
+    uid:string, 
+    rol:string
+}
+
 export interface TokenResponse {
     federatedId:      string;
     providerId:       string;
