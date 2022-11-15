@@ -11,11 +11,13 @@ const routes: Routes = [
     loadChildren: ()=> import('./components/login/login.module').then(mod=>mod.LoginModule),
   },
   {
+    path:'sign-in', 
+    loadChildren: ()=> import('./components/sign-in/sign-in.module').then(mod=>mod.SignInModule),
+  },
+  {
     path:'appStore', 
     loadChildren: ()=> import('./components/app-store/app-store.module').then(mod=>mod.AppStoreModule),
   },
-  
- 
 ];
 
 @NgModule({
