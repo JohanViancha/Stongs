@@ -19,7 +19,22 @@ export class FormSignInComponent implements OnInit {
       lastName: ['',[
         Validators.required,
       ]],
-
+      typeDocument: ['',[
+        Validators.required,
+      ]],
+      document: ['',[
+        Validators.required,
+        Validators.pattern(/^[0-9]*$/)
+      ]],
+      address: ['',[
+        Validators.required,
+      ]],
+      phone: ['',[
+        Validators.required,
+        Validators.pattern(/^[0-9]*$/),
+        Validators.maxLength(10),
+        Validators.minLength(10),
+      ]],
       password: ['',[
         Validators.required,
         Validators.minLength(8),

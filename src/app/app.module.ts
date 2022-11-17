@@ -18,8 +18,7 @@ import { FormSignInComponent } from './shared/organisms/form-sign-in/form-sign-i
 
 @NgModule({
   declarations: [
-    AppComponent,
-    FormSignInComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
