@@ -1,5 +1,5 @@
 
-<form [formGroup]="signInForm" class="form-sign-in" (submit)="signInUser()">
+<form [formGroup]="signInForm" class="form-sign-in" (submit)="registerCustomer()">
 
     <div class="container-group">
         <div class="form-group-input">
@@ -70,6 +70,23 @@
             </p>
 
             <p class="form-sign-in-errors__text" *ngFor="let error of signInForm.get('document')?.errors | errorFormReactive: 'numero de documento'">
+                {{error}}
+            </p>
+        </div>
+    </div>
+
+
+    <div class="form-input-individual">
+        <label class="form-sign-in__label">Email</label>
+        <div class="form-sign-in-input" >
+            <span class="material-symbols-outlined form-sign-in-input__icon">
+                mail
+            </span>
+            <input type="email" class="form-sign-in-input__input form-sign-in-input__input--block" formControlName="email">
+            
+        </div>
+        <div class="form-sign-in-errors" *ngIf="signInForm.get('email')?.errors && signInForm.get('email')?.touched">
+            <p class="form-sign-in-errors__text" *ngFor="let error of signInForm.get('email')?.errors | errorFormReactive: 'correo electronico'">
                 {{error}}
             </p>
         </div>

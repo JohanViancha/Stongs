@@ -9,11 +9,21 @@
     flex-wrap: wrap;
     overflow: auto;
 
+  
+
     .container-form-sign-in{
         &__title{
             font-size: $font-size-large;
             font-family: $font-title;
             font-weight: 600;
+        }
+
+        &__login{
+            color: $color-primary;
+            font-family: $font-paragraph;
+            font-size: $font-size-very-small;
+            font-weight: 600;
+    
         }
     }
     &__image{
