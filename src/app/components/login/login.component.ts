@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { UserCredential } from '@angular/fire/auth';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { loadProducts } from 'src/app/state/actions/products.actions';
 
 
 @Component({
@@ -9,13 +13,15 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   
-  constructor() { 
+  constructor(private router: Router) { 
     
   }
   
   ngOnInit(): void {
-  
-   
+  }
+
+  redirectHome(user:UserCredential){
+    this.router.navigate(['appStore']);
   }
 
 

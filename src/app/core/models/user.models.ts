@@ -1,8 +1,23 @@
-export interface UserCredentialImpl {
+export interface UserCredential{
     user:           User;
     providerId:     string;
     _tokenResponse: TokenResponse;
     operationType:  string;
+}
+
+
+export interface UserCustomer{
+    uid:string, 
+    rol:string
+    name:string,
+    lastname:string,
+    address:string,
+    phone:string
+}
+
+export interface UserSesion{
+    uid:string, 
+    rol:string
 }
 
 export interface TokenResponse {
@@ -24,7 +39,7 @@ export interface TokenResponse {
     expiresIn:        string;
     oauthIdToken:     string;
     rawUserInfo:      string;
-    isNewUser:        boolean;
+    isNewUser?:        boolean;
     kind:             string;
 }
 

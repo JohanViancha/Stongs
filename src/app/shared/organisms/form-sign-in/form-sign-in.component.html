@@ -1,0 +1,149 @@
+
+<form [formGroup]="signInForm" class="form-sign-in" (submit)="registerCustomer()">
+
+    <div class="container-group">
+        <div class="form-group-input">
+            <span  class="form-in material-symbols-outlined form-sign-in-input__icon">
+                account_box
+            </span>
+            <div>
+                <label class="form-sign-in__label">Nombres</label>
+                <div class="form-sign-in-input" >
+                    <input type="text" class="form-sign-in-input__input" formControlName="name">
+                    
+                </div>
+            </div>
+
+            <div>
+                <label class="form-sign-in__label">Apellidos</label>
+                <div class="form-sign-in-input" >
+                    <input type="text" class="form-sign-in-input__input" formControlName="lastName">     
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-sign-in-errors" *ngIf="(signInForm.get('name')?.errors && signInForm.get('name')?.touched)
+        || (signInForm.get('lastName')?.errors && signInForm.get('lastName')?.touched)">
+            <p class="form-sign-in-errors__text" *ngFor="let error of signInForm.get('name')?.errors | errorFormReactive: 'nombres'">
+                {{error}}
+            </p>
+            <p class="form-sign-in-errors__text" *ngFor="let error of signInForm.get('lastName')?.errors | errorFormReactive: 'apellidos'">
+                {{error}}
+            </p>
+        </div>
+    </div>
+
+      
+    
+    <div class="container-group">
+        <div class="form-group-input">
+            <span class="material-symbols-outlined form-sign-in-input__icon">
+                badge
+            </span>
+            <div>
+                <label class="form-sign-in__label">Tipo de documento</label>
+                <div class="form-sign-in-input">
+                    <select formControlName="typeDocument" class="form-sign-in-input__input form-sign-in-input__input--select">
+                        <option value="CC">Cédula de Ciudadanía</option>
+                        <option value="CE">Cédula de Extranjería</option>
+                        <option value="NIT">Número de Identificación Tibutaria</option>
+                    </select>
+                </div>
+                
+            </div>
+
+
+            <div>
+                <label class="form-sign-in__label">N° de documento</label>
+                <div>
+                    <input type="text" class="form-sign-in-input__input" formControlName="document">
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="form-sign-in-errors" *ngIf="(signInForm.get('typeDocument')?.errors && signInForm.get('typeDocument')?.touched) 
+        || (signInForm.get('document')?.errors && signInForm.get('document')?.touched)">
+            <p class="form-sign-in-errors__text" *ngFor="let error of signInForm.get('typeDocument')?.errors | errorFormReactive: 'tipo de documento'">
+                {{error}}
+            </p>
+
+            <p class="form-sign-in-errors__text" *ngFor="let error of signInForm.get('document')?.errors | errorFormReactive: 'numero de documento'">
+                {{error}}
+            </p>
+        </div>
+    </div>
+
+
+    <div class="form-input-individual">
+        <label class="form-sign-in__label">Email</label>
+        <div class="form-sign-in-input" >
+            <span class="material-symbols-outlined form-sign-in-input__icon">
+                mail
+            </span>
+            <input type="email" class="form-sign-in-input__input form-sign-in-input__input--block" formControlName="email">
+            
+        </div>
+        <div class="form-sign-in-errors" *ngIf="signInForm.get('email')?.errors && signInForm.get('email')?.touched">
+            <p class="form-sign-in-errors__text" *ngFor="let error of signInForm.get('email')?.errors | errorFormReactive: 'correo electronico'">
+                {{error}}
+            </p>
+        </div>
+    </div>
+    
+
+    <div class="form-input-individual">
+        <label class="form-sign-in__label">Dirección</label>
+        <div class="form-sign-in-input" >
+            <span class="material-symbols-outlined form-sign-in-input__icon">
+                location_away
+            </span>
+            <input type="text" class="form-sign-in-input__input form-sign-in-input__input--block" formControlName="address">
+            
+        </div>
+        <div class="form-sign-in-errors" *ngIf="signInForm.get('address')?.errors && signInForm.get('address')?.touched">
+            <p class="form-sign-in-errors__text" *ngFor="let error of signInForm.get('address')?.errors | errorFormReactive: 'dirección'">
+                {{error}}
+            </p>
+        </div>
+    </div>
+    
+
+    <div class="form-input-individual">
+        <label class="form-sign-in__label">Celular</label>
+        <div class="form-sign-in-input" >
+            <span class="material-symbols-outlined form-sign-in-input__icon">
+                phone_iphone
+            </span>
+            <input type="text" class="form-sign-in-input__input form-sign-in-input__input--block" formControlName="phone">
+            
+        </div>
+        <div class="form-sign-in-errors" *ngIf="signInForm.get('phone')?.errors && signInForm.get('phone')?.touched">
+            <p class="form-sign-in-errors__text" *ngFor="let error of signInForm.get('phone')?.errors | errorFormReactive: 'numero de celular'">
+                {{error}}
+            </p>
+        </div>
+    </div>
+    
+
+    <div class="form-input-individual">
+        <label class="form-sign-in__label">Contraseña</label>
+        <div class="form-sign-in-input">
+            <span class="material-symbols-outlined form-sign-in-input__icon">
+                password
+                </span>
+            <input type="password" class="form-sign-in-input__input form-sign-in-input__input--block" formControlName="password">
+        </div> 
+    
+        <div class="form-sign-in-errors" *ngIf="signInForm.get('password')?.errors && signInForm.get('password')?.touched">
+            <p class="form-sign-in-errors__text" *ngFor="let error of signInForm.get('password')?.errors | errorFormReactive: 'contraseña'">
+                {{error}}
+            </p>
+        </div>
+    </div>
+   
+    
+    <button type="submit" class="form-sign-in__button" [disabled]="!signInForm.valid && signInForm.touched" [ngClass]="{invalid: !signInForm.valid && signInForm.touched}">Registrar</button>
+</form>
+    

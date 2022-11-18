@@ -7,6 +7,7 @@ export class ErrorFormReactivePipe implements PipeTransform {
 
   
   transform(value: any, ...args: unknown[]): string[] {
+    console.log(value);
     const errorForm = Object.entries(value);
     return errorForm.map((inputError)=>{
         return this.setErrorInput(inputError,args)

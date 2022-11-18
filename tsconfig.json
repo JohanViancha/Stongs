@@ -1,11 +1,16 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
+  "baseUrl":"src",
+  "paths": {
+    "@assets/*": ["assets/*"]
+  },
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "strictPropertyInitialization":false,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,

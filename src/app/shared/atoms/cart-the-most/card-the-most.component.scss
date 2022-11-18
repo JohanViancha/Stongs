@@ -1,0 +1,102 @@
+
+@import '../../util/styles/variables-global.scss';
+
+
+.card{
+    background-color: $color-gray;
+    width: 15rem;
+    border: 2px solid $color-gray;
+    -webkit-box-shadow: 10px 10px 32px -4px $color-gray;
+    -moz-box-shadow: 10px 10px 32px -4px $color-gray;
+    box-shadow: 10px 10px 32px -4px $color-gray;
+    &-img{
+        padding: 1rem;
+        background-color: $color-white;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        & img{
+            width: 100%;
+        }
+
+        & .card-icons{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+     
+            & span{
+                cursor: pointer;
+            }
+
+            & .icon-view:hover{
+                color: $color-primary;
+                
+    
+            }
+            & .icon-love:hover{
+                color: $color-error;
+    
+            }
+
+        }  
+
+    }
+
+    & &-description{
+        padding: 1rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        &__buy{
+            width: 100%;
+            background-color: $color-primary;
+            border: 0px;
+            color: $color-white;
+            height: 2rem;
+            cursor: pointer;
+            font-family: $font-paragraph;
+            font-size: $font-size-small;
+            font-weight: 500;
+            
+        }
+        &__buy:hover{
+            color: $color-primary;
+            border: 2px solid $color-primary;
+            background-color: $color-white;
+        }
+
+        & .card-description-name{
+            color: $color-white;
+            font-family: $font-paragraph;
+            font-size: $font-size-very-small;
+            font-size: $font-size-small;
+        }
+
+        & .card-description-price{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        & .card-description-price span{
+            font-family: $font-paragraph;
+            font-size: $font-size-small;
+        }
+
+        & .card-description-price .card-description-price__money{
+            color: $color-gray;
+            font-weight: 600;
+            padding: 0.2rem 0.3rem;
+            border-radius: 10px;
+            background-color: $color-white;
+        }
+
+        & .card-description-price .card-description-price__lastmoney{
+             color: $color-white;
+             text-decoration:line-through;
+             align-items: center;
+        }
+    }
+}

@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { UserCredential } from '@angular/fire/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { collection } from '@firebase/firestore';
+import { UserSesion } from 'src/app/core/models/user.models';
 import { AuthService } from 'src/app/core/security/auth/auth.service';
 import { AlertIcon } from '../../util/services/alert.models';
 import { AlertService } from '../../util/services/alert.service';
@@ -12,6 +14,7 @@ import { AlertService } from '../../util/services/alert.service';
 })
 export class FormLoginComponent implements OnInit {
 
+  @Output() userAuthentication: EventEmitter<UserCredential> = new EventEmitter<UserCredential>()
   loginForm: FormGroup;
   constructor(private fb:  FormBuilder,
               private auth: AuthService,
@@ -46,15 +49,16 @@ export class FormLoginComponent implements OnInit {
       this.auth.loginWithEmailPassword(email, password)
     .then((user: UserCredential)=>{
       if(user){
-        this.alert.openAlert({
-          title:'Autenticación del usuario', 
-          text:`El usuario ${user.user.email} se ha autenticado`,
-          icon: AlertIcon.success
+        this.auth.getUser(user.user.uid).then((response)=>{
+          const session: UserSesion = JSON.parse(JSON.stringify(response.docs[0].data()))
+          this.auth.registerSesion(session)
+          this.userAuthentication.emit(user);
         })
       }
       
     })
     .catch((error)=>{
+      console.log(error)
       this.alert.openAlert({
         title:'Autenticación del usuario', 
         text:'El email y/o contraseña son incorrectos',
