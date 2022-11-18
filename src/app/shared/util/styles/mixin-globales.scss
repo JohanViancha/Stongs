@@ -1,0 +1,52 @@
+@import '../../util/styles/variables-global.scss';
+
+
+@mixin input_standard{
+    font-family: $font-paragraph;
+    letter-spacing: 0.02rem;
+    width:20rem;
+    border: 0px;
+    padding: 0.5rem;
+    border-bottom: 2px solid $color-gray-second;
+    outline: 0;
+    font-size: $font-size-small;        
+}
+
+@mixin label_standard{
+    font-size: $font-size-small;
+    font-family: $font-paragraph;
+    font-weight: 500;     
+}
+
+@mixin  icon-stantard {
+    color: $color-gray;
+    font-weight: 600;
+    font-size: $font-size-medium;
+}
+
+@mixin button-stantard {
+    background-color: $color-primary;
+    color: $color-white;
+    border: 0px;
+    padding: 1rem;
+    cursor: pointer;
+    font-size:$font-size-small;
+    font-weight: 400;
+    border: 1px solid $color-primary;
+    margin: 2rem 0;
+}
+
+@mixin error-input {
+    font-family: $font-paragraph;
+    font-size: $font-size-very-small;
+    margin: 0.2rem 0;
+    max-width: 23rem;
+    color:$color-error;
+    font-weight: 600;
+}
+
+@mixin button-disabled {
+    opacity: 0.5;
+    cursor:no-drop;
+}
+

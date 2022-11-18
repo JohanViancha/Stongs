@@ -6,7 +6,7 @@ import { LoginComponent } from './login.component';
 import { ButtonSignGoogleComponent } from 'src/app/shared/atoms/button-sign-google/button-sign-google.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormLoginComponent } from 'src/app/shared/organisms/form-login/form-login.component';
-import { ErrorFormReactivePipe } from 'src/app/shared/util/pipes/error-form-reactive.pipe';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -14,13 +14,13 @@ import { ErrorFormReactivePipe } from 'src/app/shared/util/pipes/error-form-reac
     LoginComponent,
     FormLoginComponent,
     ButtonSignGoogleComponent,
-    ErrorFormReactivePipe,
     
   ],
   imports: [
     CommonModule,
     LoginRoutingModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class LoginModule { }

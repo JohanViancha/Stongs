@@ -1,4 +1,5 @@
 @import '../../util/styles/variables-global.scss';
+@import '../../util/styles/mixin-globales.scss';
 
 
 .form-login{
@@ -7,9 +8,7 @@
 
 
     &__label{
-        font-size: $font-size-small;
-        font-family: $font-paragraph;
-        font-weight: 500;
+       @include label_standard;
     }
 
     & label:nth-of-type(2n){
@@ -30,14 +29,7 @@
         }
 
         &__input{
-            font-family: $font-paragraph;
-            letter-spacing: 0.02rem;
-            width:20rem;
-            border: 0px;
-            padding: 0.5rem;
-            border-bottom: 2px solid $color-gray-second;
-            outline: 0;
-            font-size: $font-size-small;        
+            @include input_standard;     
         }
     }
 
@@ -50,7 +42,7 @@
         font-size:$font-size-small;
         font-weight: 400;
         border: 1px solid $color-primary;
-        margin: 2rem 0;
+        margin: 2rem 0 0 0;
     }
 
     &__button:hover{
@@ -60,18 +52,7 @@
 
     & .form-login-errors{
         &__text{
-            font-family: $font-paragraph;
-            font-size: $font-size-very-small;
-            margin: 0.2rem 0;
-            max-width: 23rem;
-            color:$color-error;
-            font-weight: 600;
+            @include error-input;
         }
     }
-
-    .invalid{
-        opacity: 0.5;
-        cursor:no-drop;
-    }
-
 }

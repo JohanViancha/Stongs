@@ -5,6 +5,16 @@ export interface UserCredential{
     operationType:  string;
 }
 
+
+export interface UserCustomer{
+    uid:string, 
+    rol:string
+    name:string,
+    lastname:string,
+    address:string,
+    phone:string
+}
+
 export interface UserSesion{
     uid:string, 
     rol:string

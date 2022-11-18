@@ -8,8 +8,7 @@
         <app-form-login (userAuthentication)="redirectHome($event)"></app-form-login>
         <div class="container-login-alternate">
             <app-button-sign-google (userAuthentication)="redirectHome($event)"></app-button-sign-google>
-        </div>
-    
+        </div> 
+        <a class="container-login__register" [routerLink]="['/sign-in']" >Aún no estoy registrado</a>
     </div>
-
 </div>
