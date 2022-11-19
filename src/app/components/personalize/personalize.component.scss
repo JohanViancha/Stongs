@@ -1,0 +1,19 @@
+.container-personalize{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    
+    .container-personalize-product{
+        grid-column: 2;
+        grid-row: 2;
+        margin: auto;
+        &__image{
+            width: 15rem;
+        }
+    }
+
+    .container-personalize-print{
+        grid-column: 2;
+        grid-row: 1;
+    }
+}
