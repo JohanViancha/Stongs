@@ -36,6 +36,11 @@
     margin: 2rem 0;
 }
 
+@mixin button-hover{
+    background-color: $color-white;
+    color: $color-primary;
+}
+
 @mixin error-input {
     font-family: $font-paragraph;
     font-size: $font-size-very-small;
