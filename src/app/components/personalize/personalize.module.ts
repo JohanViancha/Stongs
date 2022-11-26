@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { PersonalizeRoutingModule } from './personalize-routing.module';
 import { PersonalizeComponent } from './personalize.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { PersonalizeComponent } from './personalize.component';
   ],
   imports: [
     CommonModule,
-    PersonalizeRoutingModule
+    PersonalizeRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class PersonalizeModule { }

@@ -1,25 +1,68 @@
 
+<div class="container">
 
-<div class="container-personalize">
-    <div class="container-personalize-color">
-        <label for="">Color de la camisa</label>
-        <input type="color" name="" id="">
-    </div>
-    <div class="container-personalize-print">
-        <label for="">Estampado</label>
-        <input type="file" name="" id="">
-    </div>
+    <h3 class="title-page">Personaliza tu prenda</h3>
 
-    <div class="container-personalize-type">
-        <label for="">Tipo de prenda</label>
-        <select name="" id="">
-            <option value="camiseta">Camiseta</option>
-            <option value="camisilla">Camisilla</option>
-        </select>
-    </div>
-    <div class="container-personalize-product">
-        <img src="assets/img/camisa.png" alt="" class="container-personalize-product__image">
-    </div>
-    <div></div>
-    <div></div>
+    <form [formGroup]="personalizeForm" class="container-personalize">
+      
+        <div class="container-personalize-color__shirt">
+            <label for="">Color de la camisa</label>
+            <input formControlName="colorShirt" type="color">
+         
+        </div>
+    
+        <div class="container-personalize-color__neck">
+            <label for="">Color del cuello</label>
+            <input type="color" formControlName="colorNeck">
+        </div>
+    
+        <div class="container-personalize-type-neck">
+            <label for="">Tipo de cuello</label>
+            <div class="container-personalize-type-neck__container">
+                <label for=""><input type="radio" formControlName="typeNeck" value="redondo"> Redondo</label>
+                <label for=""><input type="radio" formControlName="typeNeck" value="v"> En V</label>
+            </div>
+        </div>
+    
+        <div class="container-personalize-print">
+            <label for="">Imagen</label>
+            <input type="file" formControlName="print">
+        </div>
+    
+        <div class="container-personalize-type">
+            <label for="">Tipo de prenda</label>
+            <select formControlName="type">
+                <option value="camiseta">Camiseta</option>
+                <option value="camisilla">Camisilla</option>
+                <option value="camiseta manga larga">Camiseta manga larga</option>
+            </select>
+        </div>
+
+        <div class="container-personalize-type-cloth">
+            <label for="">Tipo de tela</label>
+            <select formControlName="typeCloth">
+                <option value="normal">Normal</option>
+                <option value="elastica">Elastica</option>
+            </select>
+        </div>
+
+
+        <img src="" alt="">
+        
+        <div class="container-personalize-description">
+            <label for="">Descripción</label>
+            <textarea formControlName="description"  rows="5"></textarea>
+        </div>
+
+        <div>
+            <button class="btn-personalize">Realizar pedido</button>
+        </div>
+
+        <div class="">
+            <label for="">Total aprox.</label>
+            <span></span>
+        </div>
+    </form>
 </div>
+
+ 
