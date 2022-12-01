@@ -5,7 +5,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 2rem;
+    gap: 1rem;
     
 
     & div{
@@ -21,9 +21,10 @@
         }
     }
 
-    .container-personalize-type-cloth,.container-personalize-type{
-        select{
-            width: 8rem;
+    .container-personalize-type-cloth,.container-personalize-type,
+     .container-personalize-size,.total-personalize{
+        input, select{
+            width: 12rem;
             height: 3rem;
             border: 0px;
             border-bottom: 1px solid;
@@ -63,7 +64,7 @@
 
     .container-personalize-description{
         grid-column-start: 1;
-        grid-column-end: 4;
+        grid-column-end: 3;
         grid-row: 3;
 
         textarea{
@@ -77,12 +78,16 @@
         }
     }
 
-    .btn-personalize{
-        @include button-stantard;
-    }
-
-    .btn-personalize:hover{
-        @include button-hover;
+    .btn-container{
+        grid-column: 2;
+        .btn-personalize{
+            @include button-stantard;
+        }
+    
+        .btn-personalize:hover{
+            @include button-hover;
+        }
+    
     }
 
     .container-personalize-type-neck{

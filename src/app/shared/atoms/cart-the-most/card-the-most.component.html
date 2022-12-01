@@ -1,28 +1,19 @@
 <section  class="card">
   
     <div class="card-img">
-        <img  alt="">
-        <div class="card-icons">
-            <span class="icon-view material-symbols-outlined">
-                visibility
-                </span>
-            <span class="icon-love material-symbols-outlined">
-                favorite
-            </span>
-        </div>
-        
-
+        <img  alt="" [src]="products.img">
+    
     </div>
     <div class="card-description">
         <div class="card-description-name">
-            <p class="card-description-name__text"></p>
+            <p class="card-description-name__text">{{products.name}}</p>
         </div>
     
         <div class="card-description-price">
-            <span class="card-description-price__money"></span>
-            <span class="card-description-price__lastmoney">$120000</span>
+            <span class="card-description-price__money">{{products.price}}</span>
+            <span class="card-description-price__lastmoney">{{products.price + 8000}}</span>
         </div>
-        <button class="card-description__buy">Comprar </button>
+        <button class="card-description__buy" (click)="makeOrder(products)">Hacer pedido </button>
     </div>
 
 

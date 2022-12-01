@@ -1,31 +1,16 @@
 
+
 <table class="table">
     <thead>
+
         <th *ngFor="let th of thheaders">{{th}}</th>
     </thead>
 
     <tbody>
-        <tr *ngFor="let tb of tbody">
-        {{tb}}
-        </tr>
-
-        <tr>
-            <td>Producto</td>
-            <td>10</td>
-            <td>Descripción gvafasfj sjnsaf</td>
-            <td>$56000</td>
-            <td>5%</td>
-            <td>Gratis</td>
-        </tr>
-
-
-        <tr>
-            <td>Producto</td>
-            <td>10</td>
-            <td>Descripción gvafasfj sjnsaf</td>
-            <td>$56000</td>
-            <td>5%</td>
-            <td>Gratis</td>
+        <tr *ngFor="let tb of tbody; let i = index">
+       
+    
+                <td *ngFor="let item of properties">{{tb[item]}}</td>
         </tr>
     </tbody>
 </table>

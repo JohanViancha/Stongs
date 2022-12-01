@@ -1,0 +1,7 @@
+
+@import '../../../shared/util/styles/mixin-globales.scss';
+@import '../../../shared/util/styles/variables-global.scss';
+
+.title-page{
+    @include title-page
+}

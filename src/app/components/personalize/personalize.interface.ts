@@ -6,14 +6,23 @@ export interface ProductPersonalize{
     type:string,
     typeCloth:string,
     description:string
+    size:string
+    total:number
+   
 }
 
 export enum priceProduct {
-    redondo=7000,
-    v = 9000,
-    camiseta=12000,
-    camisilla=10000,
-    csmangalarga=15000,
-    normal=5000,
-    elastica=10000
+    redondo=6000,
+    v = 8000,
+    camiseta=10000,
+    camisilla=8000,
+    csmangalarga=12000,
+    normal=3000,
+    elastica=5000,
+    xs=3000,
+    s=4000,
+    m=5000,
+    l=6000,
+    xl=7000,
+    xxl=8000
 }
