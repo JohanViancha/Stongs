@@ -8,6 +8,7 @@ import { FormRegisterPersonalizeComponent } from 'src/app/shared/organisms/form-
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ListPersonalizeComponent } from 'src/app/shared/pages/list-personalize/list-personalize.component';
 import { CreatePersonalzeComponent } from 'src/app/shared/pages/create-personalze/create-personalze.component';
+import { TableComponent } from 'src/app/shared/molecules/table/table.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { CreatePersonalzeComponent } from 'src/app/shared/pages/create-personalz
     FormRegisterPersonalizeComponent,
     ListPersonalizeComponent,
     CreatePersonalzeComponent,
-    PersonalizeComponent
+    PersonalizeComponent,
+    TableComponent
   ],
   imports: [
     CommonModule,

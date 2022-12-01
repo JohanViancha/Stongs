@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ProductPersonalize } from 'src/app/components/personalize/personalize.interface';
 
 @Component({
   selector: 'app-table',
@@ -7,18 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TableComponent implements OnInit {
 
-  //@Input() thheaders:string[];
-  thheaders:string[] =[
-    'Producto',
-    'Foto',
-    'Stock',
-    'Descripción',
-    'Precio',
-    'Dto.',
-    'Env.'
-  ]
+  @Input() thheaders:string[];
+  @Input() properties: string[];
+  @Input() tbody:any[];
 
-  tbody:any[] =['']
   constructor() { }
 
   ngOnInit(): void {

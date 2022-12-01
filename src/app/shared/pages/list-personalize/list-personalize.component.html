@@ -1,1 +1,6 @@
-<p>list-personalize works!</p>
+ 
+ <h3 class="title-page">Lista de prendas personalizadas</h3>
+
+ <button class="btn-create-personalize" [routerLink]="['../createPersonalize']">Crear prenda personalizada</button>
+
+ <app-table [thheaders]="thead" [tbody]="tbody" [properties]="properties"></app-table>

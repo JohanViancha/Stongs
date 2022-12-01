@@ -47,6 +47,7 @@
     <div class="container-personalize-type">
         <label for="">Tipo de prenda</label>
         <select formControlName="type">
+            <option value="">Seleccionar tipo de prenda</option>
             <option value="camiseta">Camiseta</option>
             <option value="camisilla">Camisilla</option>
             <option value="csmangalarga">Camiseta manga larga</option>
@@ -61,6 +62,7 @@
     <div class="container-personalize-type-cloth">
         <label for="">Tipo de tela</label>
         <select formControlName="typeCloth">
+            <option value="">Seleccionar tipo de tela</option>
             <option value="normal">Normal</option>
             <option value="elastica">Elastica</option>
         </select>
@@ -71,8 +73,23 @@
         </div>
     </div>
 
-
-    <img src="" alt="">
+    <div class="container-personalize-size">
+        <label for="">Talla</label>
+        <select formControlName="size">
+            <option value="">Seleccionar talla</option>
+            <option value="xs">XS</option>
+            <option value="s">S</option>
+            <option value="m">M</option>
+            <option value="l">L</option>
+            <option value="xl">XL</option>
+            <option value="xxl">XXL</option>
+        </select>
+        <div class="form-personalize-errors" *ngIf="personalizeForm.get('size')?.errors && personalizeForm.get('size')?.touched">
+            <p class="form-personalize-errors__text" *ngFor="let error of personalizeForm.get('size')?.errors | errorFormReactive: 'talla'">
+                {{error}}
+            </p>
+        </div>
+    </div>
     
     <div class="container-personalize-description">
         <label for="">Descripción</label>
@@ -84,13 +101,14 @@
         </div>
     </div>
 
-    <div>
-        <button class="btn-personalize">Realizar pedido</button>
+    <div class="btn-container">
+        <button class="btn-personalize">Crear prenda personalizada</button>
     </div>
 
     <div class="total-personalize">
         <label for="">Total aprox.</label>
-        <span class="total-personalize__value">${{calculateTotal() | number }} </span>
+        
+        <label>$ <input formControlName="total" readonly class="total-personalize__value" [value]="calculateTotal()"/></label>
     </div>
 </form>
 

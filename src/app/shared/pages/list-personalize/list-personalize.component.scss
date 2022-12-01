@@ -1,0 +1,19 @@
+
+
+@import '../../../shared/util/styles/mixin-globales.scss';
+@import '../../../shared/util/styles/variables-global.scss';
+
+
+.title-page{
+    @include title-page
+}
+
+.btn-create-personalize{
+    @include button-stantard;
+    
+}
+
+
+.btn-create-personalize:hover{
+    @include button-hover
+}

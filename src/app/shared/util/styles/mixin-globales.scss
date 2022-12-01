@@ -9,7 +9,8 @@
     padding: 0.5rem;
     border-bottom: 2px solid $color-gray-second;
     outline: 0;
-    font-size: $font-size-small;        
+    font-size: $font-size-small;       
+    background-color: transparent; 
 }
 
 @mixin label_standard{
@@ -53,5 +54,11 @@
 @mixin button-disabled {
     opacity: 0.5;
     cursor:no-drop;
+}
+
+@mixin title-page {
+    font-size: $font-size-medium;
+    font-family: $font-title;
+    margin-bottom: 3rem;
 }
 

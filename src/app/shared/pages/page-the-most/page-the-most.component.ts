@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Product } from 'src/app/core/models/product.interface';
+import { ProductService } from 'src/app/core/services/product.service';
 
 @Component({
   selector: 'app-page-the-most',
@@ -7,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageTheMostComponent implements OnInit {
 
-  constructor() { }
+  products: Product[];
+  constructor(private productServices: ProductService ) { }
 
   ngOnInit(): void {
-
+    this.productServices.getProducts().subscribe((res:Product[] )=>{
+    
+      this.products = res;
+    })
   }
 
 }
